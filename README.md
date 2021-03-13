@@ -38,4 +38,4 @@ Please submit your feedback to TrashCanMonitor@EricBT.com.
 
 # The Author's 5G21-12W-A
 
-![`5G21-12W-A High-Speed Internet Gateway`](https://ericbt.com/uploaded_images/5G21-12W-A.jpg "5G21-12W-A")
+![`5G21-12W-A High-Speed Internet Gateway`](https://ericbt.com/uploaded_images/5G21-12W-A-SMALL.jpg "5G21-12W-A")
