@@ -40,14 +40,14 @@ def record_stats(target, timeout, count, target_url, output):
 
     headers = {'Accept': 'text/html',
                'Cache-Control': 'no-cache',
-               'Connection': 'keep-alive',
+               'Connection': 'close',
                'User-Agent': 'TrashCanMonitor'}
 
     target_url_response = requests.get(target_url)
 
     headers = {'Accept': 'application/json',
                'Cache-Control': 'no-cache',
-               'Connection': 'keep-alive',
+               'Connection': 'close',
                'User-Agent': 'TrashCanMonitor'}
 
     device_info = json.loads(requests.get(f'{prefix}/dashboard_device_info_status_web_app.cgi', headers=headers).text)
