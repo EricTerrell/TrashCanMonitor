@@ -33,13 +33,20 @@ def print_usage_and_exit():
     sys.exit(1)
 
 
-def record_stats(target, timeout, count, output):
+def record_stats(target, timeout, count, target_url, output):
     global header
 
     prefix = 'http://192.168.12.1'
 
+    headers = {'Accept': 'text/html',
+               'Cache-Control': 'no-cache',
+               'Connection': 'keep-alive',
+               'User-Agent': 'TrashCanMonitor'}
+
+    target_url_response = requests.get(target_url)
+
     headers = {'Accept': 'application/json',
-               'Cache-Control': 'max-age=0',
+               'Cache-Control': 'no-cache',
                'Connection': 'keep-alive',
                'User-Agent': 'TrashCanMonitor'}
 
@@ -55,6 +62,15 @@ def record_stats(target, timeout, count, output):
 
         ['ping_time',
          result.rtt_avg_ms],
+
+        ['web_page_retrieval_time',
+         target_url_response.elapsed],
+
+        ['web_page_status',
+         target_url_response.status_code],
+
+        ['web_page_size',
+         len(target_url_response.text)],
 
         ['link_status_5g',
          device_info['link_status_5G'][0]['linkStatus']],
@@ -171,11 +187,13 @@ def main():
 
     result = dns.resolver.query(target_domain, 'A')
 
+    target_url = 'https://www.example.com/'
+
     if result.rrset is not None:
         ping_ip_address = result.rrset.items[0].address
 
         while True:
-            record_stats(ping_ip_address, timeout_seconds, simultaneous_pings, output)
+            record_stats(ping_ip_address, timeout_seconds, simultaneous_pings, target_url, output)
             time.sleep(wait_seconds)
 
 
