@@ -32,6 +32,10 @@ TrashCanMonitor &#169; Copyright 2021, [`Eric Bergman-Terrell`](https://www.eric
 
 Please submit your feedback to TrashCanMonitor@EricBT.com.
 
+# CSV File Imported into Spreadsheet
+
 ![`Spreadsheet`](https://ericbt.com/uploaded_images/trashcanspreadsheet.png "Spreadsheet")
+
+# The Author's 5G21-12W-A
 
 ![`5G21-12W-A High-Speed Internet Gateway`](https://ericbt.com/uploaded_images/5G21-12W-A.jpg "5G21-12W-A")
