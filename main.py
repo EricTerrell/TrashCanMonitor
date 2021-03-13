@@ -63,8 +63,8 @@ def record_stats(target, timeout, count, target_url, output):
         ['ping_time',
          result.rtt_avg_ms],
 
-        ['web_page_retrieval_microseconds',
-         target_url_response.elapsed.microseconds],
+        ['web_page_retrieval_seconds',
+         target_url_response.elapsed.total_seconds()],
 
         ['web_page_status',
          target_url_response.status_code],
