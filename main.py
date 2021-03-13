@@ -43,7 +43,7 @@ def record_stats(target, timeout, count, target_url, output):
                'Connection': 'close',
                'User-Agent': 'TrashCanMonitor'}
 
-    target_url_response = requests.get(target_url)
+    target_url_response = requests.get(target_url, headers=headers)
 
     headers = {'Accept': 'application/json',
                'Cache-Control': 'no-cache',
