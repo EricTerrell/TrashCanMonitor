@@ -1,15 +1,15 @@
 """
-  TrashCanMonitor
-  (C) Copyright 2021, Eric Bergman-Terrell
+    TrashCanMonitor
+    (C) Copyright 2021, Eric Bergman-Terrell
 
-  This file is part of TrashCanMonitor.
+    This file is part of TrashCanMonitor.
 
-  SyncAndVerify is free software: you can redistribute it and/or modify
+    TrashCanMonitor is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    SyncAndVerify is distributed in the hope that it will be useful,
+    TrashCanMonitor is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
