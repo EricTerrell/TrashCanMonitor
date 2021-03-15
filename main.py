@@ -24,6 +24,7 @@ import time
 import dns.resolver
 import requests
 from pythonping import ping
+from requests.exceptions import ConnectionError
 
 header = False
 
@@ -193,7 +194,14 @@ def main():
         ping_ip_address = result.rrset.items[0].address
 
         while True:
-            record_stats(ping_ip_address, timeout_seconds, simultaneous_pings, target_url, output)
+            try:
+                record_stats(ping_ip_address, timeout_seconds, simultaneous_pings, target_url, output)
+            except ConnectionError as exception:
+                line = f'{datetime.datetime.now()},"***** Exception: {exception} *****"'
+
+                print(f'{line}')
+                output.write(f'{line}\n')
+
             time.sleep(wait_seconds)
 
 
