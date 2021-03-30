@@ -13,7 +13,7 @@ TrashCanMonitor &#169; Copyright 2021, [`Eric Bergman-Terrell`](https://www.eric
 
 # Quick Start
 
-1. Install [`Python 3`](https://www.python.org/).
+1. Install [`Python 3`](https://www.python.org/). TrashCanMonitor was developed and tested with Python version 3.9.1.
 1. Install required modules: 
    1. Windows users: just run the install-modules.bat file in a command shell
    1. Otherwise, run the following commands in a command shell:
