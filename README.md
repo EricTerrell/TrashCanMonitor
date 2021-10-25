@@ -2,6 +2,10 @@
 
 Monitors your [`5G21-12W-A High-Speed Internet Gateway device`](https://www.t-mobile.com/support/public-files/attachments/T-Mobile%20High-Speed%20Internet%20Gateway%20End%20User%20Guide.pdf). Writes a log as a CSV (comma-separated values) file.
 
+# Firmware Version
+
+This software may need to be updated for newer gateway device firmware versions. It has been tested with version 1.2101.00.1609.
+
 # Copyright
 
 TrashCanMonitor &#169; Copyright 2021, [`Eric Bergman-Terrell`](https://www.ericbt.com)

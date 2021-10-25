@@ -51,7 +51,6 @@ def record_stats(target, timeout, count, target_url, output):
                'Connection': 'close',
                'User-Agent': 'TrashCanMonitor'}
 
-    device_info = json.loads(requests.get(f'{prefix}/dashboard_device_info_status_web_app.cgi', headers=headers).text)
     radio_status = json.loads(requests.get(f'{prefix}/fastmile_radio_status_web_app.cgi', headers=headers).text)
     statistics = json.loads(requests.get(f'{prefix}/statistics_status_web_app.cgi', headers=headers).text)
 
@@ -72,12 +71,6 @@ def record_stats(target, timeout, count, target_url, output):
 
         ['web_page_size',
          len(target_url_response.text)],
-
-        ['link_status_5g',
-         device_info['link_status_5G'][0]['linkStatus']],
-
-        ['link_status_lte',
-         device_info['link_status_LTE'][0]['linkStatus']],
 
         ['cellular_bytes_received',
          radio_status['cellular_stats'][0]['BytesReceived']],
@@ -128,22 +121,31 @@ def record_stats(target, timeout, count, target_url, output):
          radio_status['cell_LTE_stats_cfg'][0]['stat']['Band']],
 
         ['cellular_stats_bytes_sent',
-         statistics['WAN'][0]['EthernetBytesSent']],
+         statistics['WAN'][0]['Service'][0]['EthernetBytesSent']],
 
         ['cellular_stats_bytes_received',
-         statistics['WAN'][0]['EthernetBytesReceived']],
+         statistics['WAN'][0]['Service'][0]['EthernetBytesReceived']],
 
         ['cellular_stats_packets_sent',
-         statistics['WAN'][0]['EthernetPacketsSent']],
+         statistics['WAN'][0]['Service'][0]['EthernetPacketsSent']],
 
         ['cellular_stats_packets_received',
-         statistics['WAN'][0]['EthernetPacketsReceived']],
+         statistics['WAN'][0]['Service'][0]['EthernetPacketsReceived']],
 
-        ['cellular_stats_packets_errored',
-         statistics['WAN'][0]['X_ALU_PacketsErrored']],
+        ['cellular_stats_errors_sent',
+         statistics['WAN'][0]['Service'][0]['EthernetErrorsSent']],
 
-        ['cellular_stats_packets_dropped',
-         statistics['WAN'][0]['X_ALU_PacketsDropped']]
+        ['cellular_stats_errors_received',
+         statistics['WAN'][0]['Service'][0]['EthernetErrorsReceived']],
+
+        ['cellular_stats_discard_packets_sent',
+         statistics['WAN'][0]['Service'][0]['EthernetDiscardPacketsSent']],
+
+        ['cellular_stats_discard_packets_received',
+         statistics['WAN'][0]['Service'][0]['EthernetDiscardPacketsReceived']],
+
+        ['cellular_stats_multicast_packets_received',
+         statistics['WAN'][0]['Service'][0]['MulticastPacketsReceived']]
     ]
 
     column_names = []
