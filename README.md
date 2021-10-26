@@ -26,7 +26,7 @@ TrashCanMonitor &#169; Copyright 2021, [`Eric Bergman-Terrell`](https://www.eric
        1. python -m pip install pythonping
        1. python -m pip install requests
 1. In a command shell, navigate to the TrashCanMonitor source code folder.
-1. python ./main.py {seconds between samples} {log (csv) file path}
+1. python ./main.py {seconds between samples} {log (csv) file path, e.g. "c:\temp\trashcan-stats.csv"}
 
 # License
 
